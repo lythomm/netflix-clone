@@ -43,40 +43,39 @@ export default function Signup() {
   return (
     <>
       <HeaderContainer>
-        <Form.Title>Sign Up</Form.Title>
-        {error && <Form.Error>{error}</Form.Error>}
-
         <Form>
           <Form.Title>Sign Up</Form.Title>
-          <Form.Base onSubmit={handleSignup} method="POST" >
-            <Form.Input 
-              placeholder="First name" 
-              value={firstName}
-              onChange={({target}) => setFirstName(target.value)}  
-            />
-            <Form.Input 
-              placeholder="Email address" 
-              value={emailAddress}
-              onChange={({target}) => setEmailAddress(target.value)}  
-            />
-            <Form.Input
-              type="password"
-              placeholder="Password"
-              autoComplete="off"
-              value={password}
-              onChange={({target}) => setPassword(target.value)}  
-            />
-            <Form.Submit disabled={isInvalid} type="submit">
-              Sign Up
-            </Form.Submit>
+          {error && <Form.Error>{error}</Form.Error>}
 
-            <Form.Text>
-              Already a user ? <Form.Link to="/signin">Sign in now.</Form.Link>
-            </Form.Text>
-            <Form.TextSmall>
-              This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn More.
-            </Form.TextSmall>
-          </Form.Base>
+            <Form.Base onSubmit={handleSignup} method="POST" >
+              <Form.Input 
+                placeholder="First name" 
+                value={firstName}
+                onChange={({target}) => setFirstName(target.value)}  
+              />
+              <Form.Input 
+                placeholder="Email address" 
+                value={emailAddress}
+                onChange={({target}) => setEmailAddress(target.value)}  
+              />
+              <Form.Input
+                type="password"
+                placeholder="Password"
+                autoComplete="off"
+                value={password}
+                onChange={({target}) => setPassword(target.value)}  
+              />
+              <Form.Submit disabled={isInvalid} type="submit">
+                Sign Up
+              </Form.Submit>
+
+              <Form.Text>
+                Already a user ? <Form.Link to="/signin">Sign in now.</Form.Link>
+              </Form.Text>
+              <Form.TextSmall>
+                This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn More.
+              </Form.TextSmall>
+            </Form.Base>
         </Form>
       </HeaderContainer>
       <FooterContainer />
