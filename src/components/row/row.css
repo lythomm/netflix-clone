@@ -1,5 +1,6 @@
 .row {
   margin-left: 20px;
+  margin-top: 40px;
 }
 
 .row__title {
@@ -23,6 +24,7 @@
   max-height: 150px;
   margin-right: 10px;
   transition: transform 450ms;
+  border-radius: 5px;
 }
 
 .row__poster:hover {
@@ -30,9 +32,50 @@
 }
 
 .row__posterLarge {
-  max-height: 250px;
+  max-height: 350px;
 }
 
 .row__posterLarge:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+.row__trailer-closeIcon {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.row__tailer-iconDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  margin-top: 20px;
+  background-color: gray;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+  .row__poster {
+    max-height: 80px;
+    transition: none;
+  }
+
+  .row__posterLarge {
+    max-height: 150px;
+  }
+
+  .row__title {
+    font-size: 1rem;
+  }
+
+  .row {
+    margin-left: 10px;
+    margin-top: 5px;
+  }
 }
