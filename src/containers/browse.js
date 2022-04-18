@@ -93,6 +93,9 @@ export function BrowseContainer({ slides }) {
       </Header> */}
       <div className="browse">
         <Navbar />
+        {/* <Header.TextLink onClick={() => firebase.auth().signOut()}>
+          Sign out
+        </Header.TextLink> */}
         <Banner />
 
         {/* Rows */}
