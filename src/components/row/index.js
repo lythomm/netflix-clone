@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "../../axios";
 import requests from "../../hooks/requests";
 import YouTube from "react-youtube";
-import movieTrailer from "movie-trailer";
 import { AiOutlineClose } from "react-icons/ai";
 
 import "./row.css";
@@ -32,29 +31,30 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     },
   };
 
-  const handleClick = (movie) => {
-    console.log({ movie });
+  const selectShow = async (movie, type) => {
     if (trailerUrl) {
       setTrailerUrl("");
-      movieTrailer(movie?.name || movie?.title)
-        .then((url) => {
-          console.log({ url });
-          const urlParams = new URLSearchParams(new URL(url).search);
-          setTrailerUrl(urlParams.get("v"));
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      const { data } = await axios.get(`/${type}/${movie.id}`, {
+        params: {
+          api_key: process.env.REACT_APP_API_KEY,
+          append_to_response: "videos",
+        },
+      });
+      const trailer = data.videos.results.find((vid) =>
+        vid.name.includes("Trailer" || "trailer")
+      );
+      setTrailerUrl(trailer.key);
     } else {
-      movieTrailer(movie?.name || movie?.title)
-        .then((url) => {
-          console.log({ url });
-          const urlParams = new URLSearchParams(new URL(url).search);
-          setTrailerUrl(urlParams.get("v"));
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      const { data } = await axios.get(`/${type}/${movie.id}`, {
+        params: {
+          api_key: process.env.REACT_APP_API_KEY,
+          append_to_response: "videos",
+        },
+      });
+      const trailer = data.videos.results.find((vid) =>
+        vid.name.includes("Trailer" || "trailer")
+      );
+      setTrailerUrl(trailer.key);
     }
   };
 
@@ -66,7 +66,9 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
         {movies.map((movie) => (
           <img
             key={movies.id}
-            onClick={() => handleClick(movie)}
+            onClick={() =>
+              isLargeRow ? selectShow(movie, "tv") : selectShow(movie, "movie")
+            }
             className={`row__poster ${isLargeRow && "row__posterLarge"}`}
             src={`${baseUrl}${
               isLargeRow ? movie.poster_path : movie.backdrop_path
