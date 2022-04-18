@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from "styled-components/macro";
 
 export const Container = styled.div`
   display: flex;
@@ -14,7 +14,7 @@ export const Title = styled.h1`
   color: #fff;
   font-size: 48px;
   text-align: center;
-  font-weight: 500;
+  font-weight: 600;
 `;
 
 export const List = styled.ul`
@@ -42,6 +42,15 @@ export const Picture = styled.img`
   cursor: pointer;
 `;
 
+export const PictureToEdit = styled.img`
+  opacity: 0.5;
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  border: 3px solid black;
+  cursor: pointer;
+`;
+
 export const Item = styled.li`
   max-height: 200px;
   max-width: 200px;
@@ -49,6 +58,9 @@ export const Item = styled.li`
   text-align: center;
   margin-right: 30px;
   &:hover > ${Picture} {
+    border: 3px solid white;
+  }
+  &:hover > ${PictureToEdit} {
     border: 3px solid white;
   }
   &:hover ${Name} {

@@ -1,0 +1,122 @@
+/* BROWSE SELECTION */
+
+.profiles__edit {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  cursor: pointer;
+}
+
+.profiles__edit-title {
+  text-decoration: none;
+  padding: 1rem;
+  border: 1px solid gray;
+  color: gray;
+}
+
+.profiles__edit-title:hover {
+  border: 1px solid white;
+  color: white;
+}
+
+/* MANAGE */
+
+.profiles__manageBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  cursor: pointer;
+}
+
+.profiles__manageBtnTitle {
+  text-decoration: none;
+  padding: 1rem;
+  color: black;
+  background-color: white;
+  font-weight: 600;
+}
+
+.profiles__manageBtnTitle:hover {
+  color: white;
+  background-color: red;
+}
+
+/* EDIT MODE */
+
+.edit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit__header {
+  color: white;
+}
+
+.edit__body {
+  display: flex;
+  display: row;
+  margin: 2rem 0;
+}
+
+.edit__body-avatar {
+  width: 180px;
+  height: 180px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.edit__body-avatar:hover {
+  opacity: 0.8;
+}
+
+.edit__body-inputs {
+  color: white;
+  font-size: 2rem;
+}
+
+.edit__body-inputs input {
+  text-decoration: none;
+  background-color: gray;
+  padding: 10px;
+  color: white;
+}
+
+.edit__body-inputs input::placeholder {
+  color: white;
+}
+
+.edit__footer-btnSAVE {
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+.edit__footer-btnSAVE:hover {
+  background-color: red;
+  color: white;
+}
+
+.edit__footer-btnCANCEL {
+  border: 1px solid gray;
+  background-color: black;
+  color: gray;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-left: 30px;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+.edit__footer-btnCANCEL:hover {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+}
