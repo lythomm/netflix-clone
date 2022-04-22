@@ -65,10 +65,12 @@
   height: 180px;
   margin-right: 20px;
   cursor: pointer;
+  border: 3px solid black;
 }
 
 .edit__body-avatar:hover {
   opacity: 0.8;
+  border: 3px solid white;
 }
 
 .edit__body-inputs {

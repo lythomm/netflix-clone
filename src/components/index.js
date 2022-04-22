@@ -10,3 +10,4 @@ export { default as Loading } from "./loading";
 export { default as Row } from "./row";
 export { default as Banner } from "./banner";
 export { default as Navbar } from "./navbar";
+export { default as AvatarSelector } from "./avatar-selector";

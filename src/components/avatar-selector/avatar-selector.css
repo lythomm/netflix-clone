@@ -1,0 +1,137 @@
+.selector {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.selector__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.selector__header-left {
+  display: flex;
+}
+
+.selector__header-right {
+  display: flex;
+  align-items: center;
+}
+
+.selector__header-right h2 {
+  color: white;
+}
+
+.selector__header-right img {
+  width: 80px;
+  height: 80px;
+  margin-left: 1rem;
+  border-radius: 5px;
+}
+
+.selector__header-leftArrow {
+  width: 60px;
+  height: auto;
+  cursor: pointer;
+  color: white;
+  margin: 0 1rem;
+}
+
+.selector__header-title {
+  color: white;
+}
+
+.selector__header-title h2 {
+  margin-top: -20px;
+}
+
+.selector__row-icon {
+  width: 140px;
+  margin: 10px;
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.selector__row-icon:hover {
+  border: 3px solid white;
+}
+
+/* confirm */
+
+.confirm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm__header {
+  margin-bottom: -1rem;
+}
+
+.confirm__header h1 {
+  color: white;
+}
+
+.confirm__body {
+  display: flex;
+  align-items: center;
+}
+
+.confirm__body img {
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+}
+
+.confirm__body-greaterThan {
+  color: white;
+  width: 30px;
+  height: 30px;
+  margin: 0 1rem;
+}
+
+.separator {
+  height: 1px;
+  width: 400px;
+  background-color: gray;
+  margin: 2rem 0;
+}
+
+.selector__confirm-btnConfirm {
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+.selector__confirm-btnConfirm:hover {
+  background-color: red;
+  color: white;
+}
+
+.selector__confirm-btnCancel {
+  border: 1px solid gray;
+  background-color: black;
+  color: gray;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-left: 30px;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+.selector__confirm-btnCancel:hover {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+}

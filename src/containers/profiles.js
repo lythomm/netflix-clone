@@ -5,11 +5,13 @@ import logo from "../logo.svg";
 import "./profiles.css";
 import { Link, useLocation } from "react-router-dom";
 import { getAuth, updateProfile } from "firebase/auth";
+import { AvatarSelector } from "../components";
 
 export function SelectProfileContainer({ user, setProfile }) {
   const [manage, setManage] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [newUsername, setNewUsername] = useState("");
+  const [selectAvatar, setSelectAvatar] = useState(false)
 
   const actualLocation = useLocation().pathname;
 
@@ -33,6 +35,10 @@ export function SelectProfileContainer({ user, setProfile }) {
         console.error(error);
       });
   };
+
+  const setAvatarSelectorToFalse = () => {
+    setSelectAvatar(false)
+  }
 
   return (
     <>
@@ -98,7 +104,7 @@ export function SelectProfileContainer({ user, setProfile }) {
         </>
       )}
 
-      {isEditing && actualLocation === "/manageProfiles" && (
+      {isEditing && actualLocation === "/manageProfiles" && !selectAvatar && (
         <div className="edit">
           <div className="edit__header">
             <h1 style={{ fontSize: "4rem" }}>Edit Profile</h1>
@@ -109,6 +115,7 @@ export function SelectProfileContainer({ user, setProfile }) {
                 className="edit__body-avatar"
                 src={`/images/users/${user.photoURL}.png`}
                 alt="avatar"
+                onClick={() => setSelectAvatar(true)}
               />
             </div>
             <div className="edit__body-inputs">
@@ -126,17 +133,23 @@ export function SelectProfileContainer({ user, setProfile }) {
               className="edit__footer-btnSAVE"
               onClick={() => changeUsername()}
             >
-              Enregistrer
+              Save
             </button>
             <button
               type="button"
               className="edit__footer-btnCANCEL"
-              onClick={() => setIsEditing(false)}
+              onClick={() => { setIsEditing(false); setSelectAvatar(false); }}
             >
-              Annuler
+              Cancel
             </button>
           </div>
         </div>
+      )}
+
+      {selectAvatar && (
+        <>
+          <AvatarSelector user={user} setAvatarSelectorToFalse={setAvatarSelectorToFalse} />
+        </>
       )}
     </>
   );
